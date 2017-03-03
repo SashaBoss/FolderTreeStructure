@@ -1,0 +1,20 @@
+﻿@using TestTask.Helpers
+@using TestTask.Models
+@model TestTask.Models.FolderViewModel
+
+@{
+    ViewBag.Title = "Folder application";
+}
+
+<div class="container">
+    <h2>Folder: @Model.CurrentFolder</h2>
+
+    <ul>
+        @foreach (var childFolder in Model.ChildFolders)
+        {
+            <li>
+                <a href="@Url.CreateFolderUrl(childFolder)">@childFolder.folder_name</a>
+            </li>
+        }
+    </ul>
+</div>
